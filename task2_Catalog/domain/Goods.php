@@ -7,20 +7,22 @@ class Goods extends Entity{
 
 	private $price;
 	private $count;
+	private $cover;
 
-	public function __construct($id, $name, $description, $price, $count) {
+	public function __construct($id, $name, $description, $price, $count, $cover) {
 		parent::__construct($id);
 		$this->name = $name;
 		$this->description = $description;
 		$this->price = $price;
 		$this->count = $count;
+		$this->cover = $cover;
 	}
 
 	public function setName($name) {
 		$this->name = $name;
 	}
 
-	public function getName($name) {
+	public function getName() {
 		return $this->name;
 	}
 
@@ -48,13 +50,22 @@ class Goods extends Entity{
 		return $this->count;
 	}
 
+	public function setCover($cover) {
+		$this->cover = $cover;
+	}
+
+	public function getCover() {
+		return $this->cover;
+	}
+
 	public function toString() {
 		return "
 			id: $this->id, <br/>
 			name: $this->name, <br/>
 			description: $this->description, <br/>
 			price: $this->price, <br/>
-			count: $this->count
+			count: $this->count, <br/>
+			cover: $this->cover
 		";
 	}
  }
