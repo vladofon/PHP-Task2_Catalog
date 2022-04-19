@@ -1,6 +1,6 @@
 <?php
 
-include_once('domain/Goods.php');
+include_once($_SERVER['DOCUMENT_ROOT'].'/domain/Goods.php');
 
 class GoodsMapper {
 	private $ID = "id";
@@ -8,6 +8,7 @@ class GoodsMapper {
 	private $DESCRIPTION = "description";
 	private $PRICE = "price";
 	private $COUNT = "count";
+	private $COVER = "cover";
 
 	public function mapAll($statement) {
 		$catalogList = array();
@@ -19,7 +20,8 @@ class GoodsMapper {
 				$row[$this->NAME], 
 				$row[$this->DESCRIPTION], 
 				$row[$this->PRICE], 
-				$row[$this->COUNT]
+				$row[$this->COUNT],
+				$row[$this->COVER]
 			);
 		}
 
